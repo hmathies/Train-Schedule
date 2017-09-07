@@ -39,25 +39,15 @@
         <div class="col-lg-12">
           <div class="panel panel-default">
             <div class="panel-body">
-              <div class="row">
-                <div class="col-sm-2" id="newTrainName">
-                  <h3 class="train-key">Train Name</h3>
-                </div>
-                <div class="col-sm-2" id="newDest"> 
-                  <h3 class="train-key">Destination</h3>
-                </div>
-                <div class="col-sm-2" id="newFreq"> 
-                  <h3 class="train-key">Frequency (min)</h3>
-                </div>
-                <div class="col-sm-2" id="newArrival"> 
-                  <h3 class="train-key">Next Arrival</h3>
-                </div>
-                <div class="col-sm-2" id="newMinAway"> 
-                  <h3 class="train-key">Minutes Away</h3>
-                </div>
-                  <hr>
-                 
-              </div>
+              <table class="train-list" style="width:100%;">
+                <tr>
+                  <td><h3 class="train-key">Train Name</h3></td>
+                  <td><h3 class="train-key">Destination</h3></td>
+                  <td><h3 class="train-key">Frequency (min)</h3></td>
+                  <td><h3 class="train-key">Next Arrival</h3></td>
+                  <td><h3 class="train-key">Minutes Away</h3></td>
+                </tr>
+              </table>
             </div>
           </div>
         </div>
@@ -81,8 +71,8 @@
                   <input class="form-control" id="destination" type="text">
                 </div>
                  <div class="form-group">
-                  <label for="train-time">First Train Time (military)</label>
-                  <input class="form-control" id="train-time" type="number">
+                  <label for="first-time">First Train Time (military)</label>
+                  <input class="form-control" id="first-time" type="number">
                 </div>
                  <div class="form-group">
                   <label for="frequency">Frequency(min)</label>
@@ -98,7 +88,7 @@
 
     </div>
 
-
+  <script src="https://momentjs.com/downloads/moment.js"></script>
 	<script src="assets/js/app.js"></script>
 </body>
 </html>
