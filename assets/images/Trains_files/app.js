@@ -1,7 +1,4 @@
  /*Heather Mathies built September 2017*/
- $(document).ready(function() {
- var trains = [];
- var database =null;
 
  function firebaseConnection(){
    var config = {
@@ -14,28 +11,12 @@
     };
     firebase.initializeApp(config);
          //variable to reference the database
-    database = firebase.database();
-    
- }
-
- 
-
- function storeInDatabase(){
-    var jsonObject = JSON.stringify(trains);
     var database = firebase.database();
-      firebase.database().ref('train').set({trains:jsonObject});
- }
-
- function retrieveFromDatabase(){
-  var getTrains = firebase.database().ref('train/trains');
-    getTrains.on('value', function(snapshot) {
-      retrievedTrains = snapshot.val();
-      console.log(retrievedTrains);
-      if(retrievedTrains!=null && retrievedTrains!=undefined){
-        trains = JSON.parse(retrievedTrains);
-        listTrains();
-      }
-  });
+    /*-----------variable to reference a specific location in the database/firebase. All of the train data will be stored here. 
+    not sure if i need to add a separate folder because its always going to be train data and nothing else-------------------*/
+    //var trainref = database.ref();
+    /*-------this pushes the train data to firebase- but I'm not sure it's working---*/
+    //trainref.push(trains);
  }
 
  function initFormListener(){
@@ -53,43 +34,35 @@
         }
        trains.push(train);
        listTrains();
-       storeInDatabase();
    });
  }
 
- function calculateNextArrival(firstTime,frequency){ 
-    var testTime = moment(firstTime,"HH:mm").format("HH:mm"); 
-    var currentTime = moment().format("HH:mm"); 
-    var nextArrival = '';
-        for(var i=0; i<1440; i++){
-          var testTime = moment(testTime,"HH:mm").add(frequency,'minutes').format("HH:mm"); // 02:30
-          if(testTime>currentTime){
-            nextArrival = testTime;
-            break;
-          }
-        }
-        return nextArrival;
- }
+ function calculateNextArrival(firstTime,frequency){
 
- function calculateMinutesAway(nextArrival){ 
-  return moment(nextArrival, "HH:mm").fromNow();
  }
 
  function listTrains() {
     var trainListTable = $('.train-list');
-    $(row).html('');
        for(var i =0; i<trains.length; i++){
           var train = trains[i];
           nextArrival = calculateNextArrival(train.firstTime,train.frequency);
-          minutesAway = calculateMinutesAway(nextArrival);
+          minutesAway = '';
           var row = '<tr><td>'+train.name+'</td><td>'+train.destination+'</td><td>'+train.frequency+'</td><td>'+nextArrival+'</td><td>'+minutesAway+'</td></tr>';
           trainListTable.append(row);
        }
   }
-   
-    firebaseConnection();
-    // retrieveFromDatabase();
-    initFormListener();
-    // listTrains();  
 
+var trains = [];
+
+
+ $(document).ready(function() {
+    firebaseConnection();
+    initFormListener();
+    listTrains();
+    sandbox();
+
+    function sandbox(){
+      var res =moment('10:22').fromNow();
+      console.log(res);
+    }
  });

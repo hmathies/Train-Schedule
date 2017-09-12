@@ -1,23 +1,23 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-	<meta charset="UTF-8">
+<!-- saved from url=(0091)file:///Users/heathermathies/Documents/UCF_Bootcamp/homework/07-Assignment/Train/index.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	
   <meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Trains</title>
-    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
-    <link href="https://fonts.googleapis.com/css?family=Architects+Daughter|Comfortaa|PT+Sans+Caption|Quattrocento+Sans" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="./Trains_files/style.css">
+    <link href="./Trains_files/css" rel="stylesheet">
    <!-- jQuery -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="./Trains_files/jquery.min.js"></script>
 
     <!-- Bootstrap CDN-->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">   
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="./Trains_files/bootstrap.min.css">   
+    <script src="./Trains_files/bootstrap.min.js"></script>
 
 <!-- 	Firebase Reference   -->
-    <script src="https://www.gstatic.com/firebasejs/4.3.0/firebase.js"></script>
+    <script src="./Trains_files/firebase.js"></script>
   </head>
   <body>
-    <div class="container background">
+    <div class="container">
            <!-- Nav </div> -->
        <div class="row"> 
         <nav class="navbar">
@@ -35,14 +35,14 @@
             <div class="panel-body">
               <h3 class="schedule">Current Train Schedule</h3>
                 <table class="train-list">
-                <tr>
+                <tbody><tr>
                   <td><h3 class="train-key">Train Name</h3></td>
                   <td><h3 class="train-key">Destination</h3></td>
                   <td><h3 class="train-key">Frequency (min)</h3></td>
                   <td><h3 class="train-key">Next Arrival</h3></td>
                   <td><h3 class="train-key">Minutes Away</h3></td>
                 </tr>
-              </table>
+              <tr><td>Heather</td><td>Heaven</td><td>30</td><td>undefined</td><td></td></tr></tbody></table>
             </div>
           </div>
         </div>
@@ -53,41 +53,41 @@
         <div class="col-lg-12">
           <div class="panel panel-default">
             <div class="panel-heading">
-              <h3 class="panel-title" id="add">Add a Train</h3>
+              <h3 class="panel-title">Add a Train</h3>
             </div>
             <div class="panel-body">
               <form>
                 <div class="form-group">
                   <label for="train-name">Train Name</label>
-                  <input class="form-control" id="train-name" type="text" placeholder="Midnight Express" required>
+                  <input class="form-control" id="train-name" type="text">
                 </div>
                 <div class="form-group">
                   <label for="destination">Destination</label>
-                  <input class="form-control" id="destination" type="text" placeholder="London" required>
+                  <input class="form-control" id="destination" type="text">
                 </div>
                  <div class="form-group">
                   <label for="first-time">First Train Time (military)</label>
-                  <input class="form-control" id="first-time" placeholder="00:00" required>
+                  <input class="form-control" id="first-time" type="number">
                 </div>
                  <div class="form-group">
                   <label for="frequency">Frequency(min)</label>
-                  <input class="form-control" id="frequency" type="number" placeholder="30" required>
+                  <input class="form-control" id="frequency" type="number">
                 </div>      
-                <button class="btn btn-primary background-switch" id="submit-train" type="submit">Add</button>
+                <button class="btn btn-primary" id="submit-train" type="submit">Submit</button>
               </form>
             </div>
           </div>
         </div>  
       </div>
       <!-- this div contains my name and professional links in a footer -->
-    <div class="row footer" >
+    <div class="row footer">
         <div class="col-lg-12">
-          <div class="navbar footer" >
+          <div class="navbar footer">
             <p class="navbar-text">© 2017 - Site Built By Heather Mathies</p>
             <br>        
-             <a href="https://github.com/hmathies" target="_blank"><img src="assets/images/GitHub_Icon.png" height="20" width="20" alt="GitHub"></a>
-             <a href="https://www.facebook.com/heather.mathies" target="_blank"><img src="assets/images/Facebook_icon.png" height="20" width="20" alt="Facebook"></a>
-             <a href="https://www.linkedin.com/in/heather-mathies-617384a7/" target="_blank"><img src="assets/images/Linkedin_Icon.png" height="20" width="20" alt="linkedin"></a>
+             <a href="https://github.com/hmathies" target="_blank"><img src="./Trains_files/GitHub_Icon.png" height="20" width="20" alt="GitHub"></a>
+             <a href="https://www.facebook.com/heather.mathies" target="_blank"><img src="./Trains_files/Facebook_icon.png" height="20" width="20" alt="Facebook"></a>
+             <a href="https://www.linkedin.com/in/heather-mathies-617384a7/" target="_blank"><img src="./Trains_files/Linkedin_Icon.png" height="20" width="20" alt="linkedin"></a>
           </div>
         </div>
     </div>
@@ -95,9 +95,10 @@
 
 
     </div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.js"></script>
-  <script src="https://momentjs.com/downloads/moment.js"></script>
-	<script src="assets/js/app.js"></script>
-</body>
-</html>
 
+  <script src="./Trains_files/moment.js"></script>
+	<script src="./Trains_files/app.js"></script>
+
+
+
+</body></html>
