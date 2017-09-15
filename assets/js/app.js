@@ -1,9 +1,10 @@
 /*Heather Mathies built September 2017*/
 $(document).ready(function() {
+    //variable to hold the train data in firebase
     var trains = [];
-    var database =null;
+    var database = null;
 
-   function firebaseConnection() {
+    function firebaseConnection() {
         var config = {
             apiKey: "AIzaSyDayqtJ-tTarim-e55T56edQWDn-omh0gs",
             authDomain: "train-app-7b721.firebaseapp.com",
@@ -12,6 +13,7 @@ $(document).ready(function() {
             storageBucket: "",
             messagingSenderId: "45457176829"
         };
+
         firebase.initializeApp(config);
         //variable to reference the database
         var database = firebase.database();
@@ -39,7 +41,6 @@ $(document).ready(function() {
             }
         });
     }
-
 
 
     function initFormListener() {
@@ -72,7 +73,7 @@ $(document).ready(function() {
                 break;
             }
         }
-        // updateTrainSchedule();
+
         return nextArrival;
     }
 
