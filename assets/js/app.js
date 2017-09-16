@@ -21,7 +21,7 @@ $(document).ready(function() {
     }
 
     firebaseConnection();
-
+    setInterval(function(){ listTrains(); }, 1000);
     function storeInDatabase() {
         var jsonObject = JSON.stringify(trains);
         var database = firebase.database();
@@ -58,6 +58,7 @@ $(document).ready(function() {
             }
             trains.push(train);
             listTrains();
+            $('.addTrainForm input').val('');
             storeInDatabase();
         });
     }
@@ -67,7 +68,7 @@ $(document).ready(function() {
         var currentTime = moment().format("HH:mm");
         var nextArrival = '';
         for (var i = 0; i < 1440; i++) {
-            var testTime = moment(testTime, "HH:mm").add(frequency, 'minutes').format("HH:mm"); // 02:30
+            var testTime = moment(testTime, "HH:mm").add(frequency, 'minutes').format("HH:mm"); 
             if (testTime > currentTime) {
                 nextArrival = testTime;
                 break;
@@ -83,8 +84,8 @@ $(document).ready(function() {
     }
 
     function listTrains() {
-        var trainListTable = $('.train-list');
-        $(row).html('');
+        var trainListTable = $('.train-list tbody');
+        trainListTable.empty();
         for (var i = 0; i < trains.length; i++) {
             var train = trains[i];
             nextArrival = calculateNextArrival(train.firstTime, train.frequency);

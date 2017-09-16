@@ -35,13 +35,16 @@
             <div class="panel-body">
               <h3 class="schedule">Current Train Schedule</h3>
                 <table class="train-list">
-                <tr>
-                  <td><h3 class="train-key">Train Name</h3></td>
-                  <td><h3 class="train-key">Destination</h3></td>
-                  <td><h3 class="train-key">Frequency (min)</h3></td>
-                  <td><h3 class="train-key">Next Arrival</h3></td>
-                  <td><h3 class="train-key">Minutes Away</h3></td>
-                </tr>
+                 <thead>
+                  <tr>
+                    <td><h3 class="train-key">Train Name</h3></td>
+                    <td><h3 class="train-key">Destination</h3></td>
+                    <td><h3 class="train-key">Frequency (min)</h3></td>
+                    <td><h3 class="train-key">Next Arrival</h3></td>
+                    <td><h3 class="train-key">Minutes Away</h3></td>
+                  </tr>
+                 </thead>
+                <tbody></tbody>
               </table>
             </div>
           </div>
@@ -56,7 +59,7 @@
               <h3 class="panel-title" id="add">Add a Train</h3>
             </div>
             <div class="panel-body">
-              <form>
+              <form class="addTrainForm">
                 <div class="form-group">
                   <label for="train-name">Train Name</label>
                   <input class="form-control" id="train-name" type="text" placeholder="Midnight Express" required>
