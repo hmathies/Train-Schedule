@@ -1,101 +1,61 @@
 /*Heather Mathies built September 2017*/
-$(document).ready(function() {
-    //variable to hold the train data in firebase
-    var trains = [];
-    var database = null;
+    
+/*---------------Initialize Firebase--------------------*/
+ var config = {
+     apiKey: "AIzaSyDayqtJ-tTarim-e55T56edQWDn-omh0gs",
+     authDomain: "train-app-7b721.firebaseapp.com",
+     databaseURL: "https://train-app-7b721.firebaseio.com",
+     projectId: "train-app-7b721",
+     storageBucket: "train-app-7b721.appspot.com",
+     messagingSenderId: "45457176829"
+ };
+ firebase.initializeApp(config);
+ //variable to reference the database
+ var database = firebase.database();
+ 
+ /*-------this is where the user added train is added to firebase---------*/
+ $('#submit-train').on('click', function(event) {
+     event.preventDefault();
 
-    function firebaseConnection() {
-        var config = {
-            apiKey: "AIzaSyDayqtJ-tTarim-e55T56edQWDn-omh0gs",
-            authDomain: "train-app-7b721.firebaseapp.com",
-            databaseURL: "https://train-app-7b721.firebaseio.com",
-            projectId: "train-app-7b721",
-            storageBucket: "",
-            messagingSenderId: "45457176829"
-        };
+     database.ref().push({
+        
+         name: $('#train-name').val().trim(),
+         destination: $('#destination').val().trim(),
+         firstTime: moment($('#first-time').val().trim(), 'HH:mm').unix(),
+         frequency: $('#frequency').val().trim(),
+         dateAdded: firebase.database.ServerValue.TIMESTAMP
+     });
 
-        firebase.initializeApp(config);
-        //variable to reference the database
-        var database = firebase.database();
-
-    }
-
-    firebaseConnection();
-    setInterval(function(){ listTrains(); }, 1000);
-    function storeInDatabase() {
-        var jsonObject = JSON.stringify(trains);
-        var database = firebase.database();
-        firebase.database().ref('train').set({
-            trains: jsonObject
-        });
-    }
-
-    function retrieveFromDatabase() {
-        var getTrains = firebase.database().ref('train/trains');
-        getTrains.on('value', function(snapshot) {
-            retrievedTrains = snapshot.val();
-            console.log(retrievedTrains);
-            if (retrievedTrains != null && retrievedTrains != undefined) {
-                trains = JSON.parse(retrievedTrains);
-                listTrains();
-            }
-        });
-    }
+     $('.addTrainForm input').val('');
 
 
-    function initFormListener() {
-        $('#submit-train').on('click', function() {
-            event.preventDefault();
-            name = $('#train-name').val().trim();
-            destination = $('#destination').val().trim();
-            firstTime = $('#first-time').val().trim();
-            frequency = $('#frequency').val().trim();
-            var train = {
-                name: name,
-                destination: destination,
-                firstTime: firstTime,
-                frequency: frequency
-            }
-            trains.push(train);
-            listTrains();
-            $('.addTrainForm input').val('');
-            storeInDatabase();
-        });
-    }
+ });
 
-    function calculateNextArrival(firstTime, frequency) {
-        var testTime = moment(firstTime, "HH:mm").format("HH:mm");
-        var currentTime = moment().format("HH:mm");
-        var nextArrival = '';
-        for (var i = 0; i < 1440; i++) {
-            var testTime = moment(testTime, "HH:mm").add(frequency, 'minutes').format("HH:mm"); 
-            if (testTime > currentTime) {
-                nextArrival = testTime;
-                break;
-            }
-        }
+ /*--------this calculates the next arrival and minutes away by order of when entered
+           then displays it to the page---------------------------------------------*/
+ database.ref().orderByChild("dateAdded").on('child_added', function(snapshot) {
 
-        return nextArrival;
-    }
+     var sv = snapshot.val();
+     var currentTime = moment();
+     
+     var thisFreq = sv.frequency;
+     var firstTimeConverted = moment(sv.firstTime, 'X');
 
-    function calculateMinutesAway(nextArrival) {
-        return moment(nextArrival, "HH:mm").fromNow();
+     var diffTime = currentTime.diff((firstTimeConverted), "minutes");
+     var trainRemainder = diffTime % thisFreq;
 
-    }
+     var minutesAway = thisFreq - trainRemainder;
+     var nextArrival = currentTime.add(minutesAway, 'minutes').format('HH:mm');
 
-    function listTrains() {
-        var trainListTable = $('.train-list tbody');
-        trainListTable.empty();
-        for (var i = 0; i < trains.length; i++) {
-            var train = trains[i];
-            nextArrival = calculateNextArrival(train.firstTime, train.frequency);
-            minutesAway = calculateMinutesAway(nextArrival);
-            var row = '<tr><td>' + train.name + '</td><td>' + train.destination + '</td><td>' + train.frequency + '</td><td>' + nextArrival + '</td><td>' + minutesAway + '</td></tr>';
-            trainListTable.append(row);
-        }
-    }
 
-    retrieveFromDatabase();
-    initFormListener();
+     $(".train-list tbody").append('<tr><td>' + sv.name +
+         '</td><td>' + sv.destination +
+         '</td><td>' + sv.frequency +
+         '</td><td>' + nextArrival +
+         '</td><td>' + minutesAway +
+         '</td></tr>');
 
-});
+/*-----------------Handle the errors------------------*/
+ }, function(errorObject) {
+     console.log("Errors handled: " + errorObject.code);
+ });

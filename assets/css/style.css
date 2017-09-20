@@ -1,88 +1,103 @@
-
-
-.train-list {
-	width:100%;
-
+#addTrain {
+  float: right;
 }
 
-.train-list, .form-group{
-	font-family: 'PT Sans Caption', sans-serif;
+#trainSchedule {
+  float: left;
+  text-align: left;
+}
 
+.train-list {
+  width: 820px;
+  text-align: left;
+}
+
+.train-key {
+  text-align: left;
+}
+
+.train-list,
+.form-group {
+  font-family: 'PT Sans Caption', sans-serif;
 }
 
 .panel {
-	font-size: 18px;
-	font-weight: bold;
+  font-size: 18px;
 }
 
 footer {
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    height: 100px;
-    width: 100%;
-    background-color: #666666;
-    color: #777777;
-    text-align: center;
-    clear: both;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 100px;
+  width: 100%;
+  background-color: #666666;
+  color: #777777;
+  text-align: center;
+  clear: both;
 }
 
 #title {
-	color: teal;
-	font-family: 'Quattrocento Sans', sans-serif;    
-	font-size: 50px;
-	font-weight: 900;
-	top: 0;
-	
+  color: teal;
+  font-family: 'Quattrocento Sans', sans-serif;
+  font-size: 50px;
+  font-weight: 900;
+  top: 0;
 }
+
 .navbar {
-	 background: white;
-	 position: absolute;
-	 width:100%;
-	 height: 75px;
+  background: white;
+  position: absolute;
+  width: 100%;
+  height: 75px;
 }
+
 .schedule {
-	text-align: center;
-	font-family: 'PT Sans Caption', sans-serif;
-	font-weight: bolder;
+  text-align: center;
+  font-family: 'PT Sans Caption', sans-serif;
+  /*font-weight: bolder;
 	font-stretch: expanded;
 	font-weight: 800;
-	font-size: 30px;
+	font-size: 30px;*/
 }
+
 .panel-title {
-	font-size: 20px;
-	font-family: 'Quattrocento Sans', sans-serif;
-
+  font-size: 20px;
+  font-family: 'Quattrocento Sans', sans-serif;
 }
+
 .background {
-	background-image: url('../images/trainWallpaper.jpg');
-	opacity: 0.6
-
+  background-image: url('../images/trainWallpaper.jpg');
+  opacity: 0.8
 }
 
- body { 
-	    background-image: url('../images/trainWallpaper.jpg');
-	    background-attachment: fixed;
-	    background-position: center; 
+body {
+  background-image: url('../images/trainWallpaper.jpg');
+  background-attachment: fixed;
+  background-position: center;
+  font-style: none;
+}
 
-  }
-  #submit-train {
-  	background-color: teal;
-  }
- .background-switch {
+#submit-train {
+  background-color: teal;
+}
+
+.background-switch {
   text-align: center;
   color: white;
-  width: 100px; 
+  width: 100px;
   height: 40px;
-  background-color:#4d1652;
-}
-.background-switch:hover {
-  border-radius: 30px;
-  }
-#add {
-	font-size: 25px;
-	font-weight: bold;
-	text-align: center;
-	word-spacing: expanded;
+  background-color: #4d1652;
 }
 
+.background-switch:hover {
+  border-radius: 30px;
+}
+
+#add,
+#current {
+  font-size: 25px;
+  font-weight: bold;
+  text-align: center;
+  word-spacing: expanded;
+}
