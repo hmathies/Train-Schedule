@@ -26,14 +26,15 @@
   word-spacing: expanded;
 }
 
-.background {
+.container {
   background-image: url('../images/trainWallpaper.jpg');
   opacity: 0.8;
+  clear: both;
 }
 
 body {
   background-image: url('../images/trainWallpaper.jpg');
-  background-attachment: fixed;
+  background-attachment: relative;
   background-position: center;
   font-style: none;
 }
@@ -60,6 +61,7 @@ body {
   float: left;
   text-align: left;
   margin-right: 7px;
+
 }
 
 .train-list {
@@ -78,6 +80,7 @@ body {
 #addTrain {
   float: left;
   margin-bottom: 70px;
+
 
 }
 
@@ -98,6 +101,9 @@ body {
 }
 
 /*================================= footer ===================================*/
+.footer {
+
+}
 
 .footer p {
 margin-bottom: 0;
