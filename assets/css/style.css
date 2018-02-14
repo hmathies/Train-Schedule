@@ -128,59 +128,8 @@ text-align: center;
 
 
 /*================================= media queries ===================================*/
-@media all and (max-width: 768px) {
 
-    #current {
-      text-align: left;
-      margin-right: 0;
-      padding-right: 0;
-
-    }
-
-    .panel {
-      font-size: 10px;
-
-    }
-
-    .panel-title {
-      font-size: 14px;
-      font-family: 'Quattrocento Sans', sans-serif;
-
-    }
-    .train-list tbody{
-        font-size: 10px;
-        margin-right: 0;
-        padding-right: 0;
-
-    }
-    td {
-      width: 3%;
-      padding: 0;
-      margin: 1px;
-      margin-right: 0;
-      padding-right: 0;
-    }
-    h3.train-key {
-      font-size: 12px;
-      width: 10%;
-      margin-right: 0;
-      padding-right: 0;
-    }
-
-     #trainSchedule {
-       margin-right: 0;
-       padding-right: 0;
-       right: 0;
-       left:0;
-       bottom: 0;
-       top: 0;
-       max-width: 750px;
-     }
-
-
-}
-
-@media all and (max-width: 440px) {
+@media all and (max-width: 991px) {
 
     #current {
       text-align: left;
@@ -219,6 +168,111 @@ text-align: center;
       left:0;
       bottom: 0;
       top: 0;
-      /* max-width: 430px; */
+    }
+}
+
+@media all and (max-width: 768px) {
+
+    #current {
+      text-align: left;
+      margin-right: 0;
+      padding-right: 0;
+
+    }
+
+    .panel {
+      font-size: 10px;
+
+    }
+
+    .panel-title {
+      font-size: 14px;
+      font-family: 'Quattrocento Sans', sans-serif;
+
+    }
+    .train-list tbody{
+        font-size: 10px;
+        margin-right: 0;
+        padding-right: 0;
+
+    }
+    td {
+      width: 3%;
+      padding: 0;
+      margin: 1px;
+      margin-right: 0;
+      padding-right: 0;
+    }
+    h3.train-key {
+      font-size: 12px;
+      width: 10%;
+      margin-right: 0;
+      padding-right: 0;
+    }
+    .train-list {
+      width: 700px;
+      text-align: left;
+      margin: 0;
+      padding: 0;
+    }
+
+     #trainSchedule {
+       margin-right: 0;
+       padding-right: 0;
+       right: 0;
+       left:0;
+       bottom: 0;
+       top: 0;
+       /* max-width: 750px; */
+     }
+
+
+}
+
+@media all and (max-width: 440px) {
+
+    #current {
+      text-align: left;
+
+    }
+    .panel {
+      font-size: 10px;
+    }
+
+
+    .panel-title {
+      font-size: 14px;
+      font-family: 'Quattrocento Sans', sans-serif;
+    }
+
+    .train-list tbody{
+        font-size: 10px;
+
+    }
+
+    td {
+      width: 3%;
+      padding: 0;
+      margin: 1px;
+    }
+
+    h3.train-key {
+      font-size: 12px;
+      width: 10%;
+    }
+    .train-list {
+      width: 380px;
+      text-align: left;
+      margin: 0;
+      padding: 0;
+    }
+
+    #trainSchedule {
+      margin-right: 0;
+      padding-right: 0;
+      right: 0;
+      left:0;
+      bottom: 0;
+      top: 0;
     }
 }
