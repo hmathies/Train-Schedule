@@ -1,39 +1,4 @@
-#addTrain {
-  float: right;
-}
-
-#trainSchedule {
-  float: left;
-  text-align: left;
-}
-
-.train-list {
-  width: 820px;
-  text-align: left;
-}
-
-.train-key {
-  text-align: left;
-}
-
-.train-list,
-.form-group {
-  font-family: 'PT Sans Caption', sans-serif;
-}
-
-.panel {
-  font-size: 18px;
-}
-
-footer {
-  left: 0;
-  bottom: 0;
-  height: 100px;
-  width: 100%;
-  background-color: #666666;
-  color: #777777;
-  text-align: center;
-}
+/*===========================header===========================================*/
 
 #title {
   color: teal;
@@ -51,14 +16,14 @@ footer {
   height: 75px;
 }
 
-.schedule {
-  text-align: center;
-  font-family: 'PT Sans Caption', sans-serif;
-}
+/*========================= main body container ==============================*/
 
-.panel-title {
-  font-size: 20px;
-  font-family: 'Quattrocento Sans', sans-serif;
+#add,
+#current {
+  font-size: 25px;
+  font-weight: bold;
+  text-align: center;
+  word-spacing: expanded;
 }
 
 .background {
@@ -71,6 +36,46 @@ body {
   background-attachment: fixed;
   background-position: center;
   font-style: none;
+}
+
+.panel {
+  font-size: 18px;
+}
+
+
+.panel-title {
+  font-size: 20px;
+  font-family: 'Quattrocento Sans', sans-serif;
+}
+
+.train-list,
+.form-group {
+  font-family: 'PT Sans Caption', sans-serif;
+}
+
+/*=====================Current Train Schedule div=============================*/
+
+
+#trainSchedule {
+  float: left;
+  text-align: left;
+}
+
+.train-list {
+  width: 820px;
+  text-align: left;
+}
+
+.train-key {
+  text-align: left;
+}
+
+
+
+/*============================ Add Train Div =================================*/
+
+#addTrain {
+  float: right;
 }
 
 #submit-train {
@@ -89,10 +94,15 @@ body {
   border-radius: 30px;
 }
 
-#add,
-#current {
-  font-size: 25px;
-  font-weight: bold;
+/*================================= footer ===================================*/
+
+
+
+
+.navbar-text {
+text-align: center;
+}
+
+.footer img {
   text-align: center;
-  word-spacing: expanded;
 }
