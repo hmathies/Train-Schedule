@@ -28,7 +28,7 @@
 
 .background {
   background-image: url('../images/trainWallpaper.jpg');
-  opacity: 0.8
+  opacity: 0.8;
 }
 
 body {
@@ -59,6 +59,7 @@ body {
 #trainSchedule {
   float: left;
   text-align: left;
+  margin-right: 7px;
 }
 
 .train-list {
@@ -75,7 +76,9 @@ body {
 /*============================ Add Train Div =================================*/
 
 #addTrain {
-  float: right;
+  float: left;
+  margin-bottom: 70px;
+
 }
 
 #submit-train {
@@ -96,7 +99,10 @@ body {
 
 /*================================= footer ===================================*/
 
-
+.footer p {
+margin-bottom: 0;
+padding: 0;
+}
 
 
 .navbar-text {
@@ -104,5 +110,9 @@ text-align: center;
 }
 
 .footer img {
-  text-align: center;
+  display: inline-block;
+  margin-left: 5px;
+  margin-bottom: 0;
+  padding: 0;
+  bottom: 0;
 }
