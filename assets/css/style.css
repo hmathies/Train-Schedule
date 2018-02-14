@@ -6,6 +6,7 @@
   font-size: 50px;
   font-weight: 900;
   top: 0;
+  text-align: center;
 
 }
 
@@ -104,7 +105,8 @@ body {
 
 /*================================= footer ===================================*/
 .footer {
-
+clear: both;
+background-color: white;
 }
 
 .footer p {
@@ -129,7 +131,7 @@ text-align: center;
 
 /*================================= media queries ===================================*/
 
-@media all and (max-width: 991px) {
+/* @media all and (max-width: 991px) {
 
     #current {
       text-align: left;
@@ -169,8 +171,8 @@ text-align: center;
       bottom: 0;
       top: 0;
     }
-}
-
+} */
+/*
 @media all and (max-width: 768px) {
 
     #current {
@@ -223,12 +225,12 @@ text-align: center;
        left:0;
        bottom: 0;
        top: 0;
-       /* max-width: 750px; */
+
      }
 
 
-}
-
+} */
+/*
 @media all and (max-width: 440px) {
 
     #current {
@@ -275,4 +277,4 @@ text-align: center;
       bottom: 0;
       top: 0;
     }
-}
+} */
