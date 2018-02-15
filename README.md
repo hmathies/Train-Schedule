@@ -3,7 +3,7 @@
 <h2>Technologies Used: </h2>
   <ul>
     <li>Bootstrap 3: </li><p>I used Bootstrap for most of the project and then added custom CSS when I wanted something unique.</p>
-    <li>Firebase: </li><p></p>
+    <li>Firebase: </li><p>Google's mobile and web application development platform.  Check it out <a href="https://firebase.google.com/">here.</a></p>
     <li>MomentJS: </li><p>used to parse and manipulate time in jQuery in order to tell users the how many minutes away a train is, while updating every second!  Read the documentation <a href="https://momentjs.com/">here.</a></p>
     <li> JQuery: </li><p>for basic site functionality.</p>
   </ul>
