@@ -107,25 +107,25 @@ body {
 .footer {
 clear: both;
 background-color: white;
-}
-
-.footer p {
-margin-bottom: 0;
-padding: 0;
-}
-
-
-.navbar-text {
+padding: 1em;
 text-align: center;
+
 }
 
-.footer img {
+
+
+/* .navbar-text {
+text-align: center;
+} */
+
+/* .footer img {
   display: inline-block;
   margin-left: 5px;
   margin-bottom: 0;
   padding: 0;
   bottom: 0;
-}
+
+} */
 
 
 
