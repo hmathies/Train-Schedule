@@ -8,103 +8,108 @@
   <link rel="shortcut icon" href="assets/images/favicon.png" />
   <title>Train Scheduler</title>
 
-  <!-- custom css -->
-  <link rel="stylesheet" type="text/css" href="assets/css/style.css">
-  <!-- Bootstrap 3 CDN-->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+
+  <!-- Bootstrap 4 CDN-->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
   <!-- Google Fonts Link -->
   <link href="https://fonts.googleapis.com/css?family=Architects+Daughter|Comfortaa|PT+Sans+Caption|Quattrocento+Sans" rel="stylesheet">
+  <!-- custom css -->
+  <link rel="stylesheet" type="text/css" href="assets/css/style.css">
 
 </head>
 
+
+
 <body>
-  <div class="container">
 
-    <!-- Header  -->
-    <div class="jumbotron">
-      <div class="container">
-        <h1 id="title"><strong>Train Scheduler</strong></h1>
-      </div>
+
+  <!-- Header  -->
+  <div class="jumbotron">
+    <div class="container">
+      <h1 id="title"><strong>Train Scheduler</strong></h1>
     </div>
-
-    <!-- Current Train Schedule -->
-    <div class="row" id="trainSchedule">
-      <div class="col-sm-12">
-        <div class="panel panel-default">
-          <div class="panel-heading">
-            <h3 class="panel-title" id="current">Current Train Schedule</h3>
-          </div>
-          <div class="table-responsive-sm table-responsive-md">
-            <table class="table train-list table-striped">
-
-              <thead class="table-header">
-                <tr>
-                  <th scope="col">Train Name</th>
-                  <th scope="col">Destination</th>
-                  <th scope="col">Frequency</th>
-                  <th scope="col">Next Arrival</th>
-                  <th scope="col">Minutes Away</th>
-                </tr>
-              </thead>
-              <!-- train data from firebase is loaded into the tbody -->
-              <tbody></tbody>
-
-            </table>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Add Train -->
-    <div class="row" id='addTrain'>
-      <div class="col-sm-12">
-        <div class="panel panel-default">
-          <div class="panel-heading">
-            <h3 class="panel-title" id="add">Add a Train</h3>
-          </div>
-          <div class="panel-body">
-            <form class="addTrainForm">
-              <div class="form-group">
-                <label for="train-name">Train Name</label>
-                <input class="form-control" id="train-name" type="text" placeholder="Midnight Express" required>
-              </div>
-              <div class="form-group">
-                <label for="destination">Destination</label>
-                <input class="form-control" id="destination" type="text" placeholder="London" required>
-              </div>
-              <div class="form-group">
-                <label for="first-time">First Train Time (military)</label>
-                <input class="form-control" id="first-time" placeholder="00:00" required>
-              </div>
-              <div class="form-group">
-                <label for="frequency">Frequency(min)</label>
-                <input class="form-control" id="frequency" type="number" placeholder="30" required>
-              </div>
-              <button class="btn btn-primary background-switch" id="submit-train" type="submit">Add</button>
-            </form>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!--   footer   -->
-    <div class="row footer">
-      <div class="col-lg-12">
-        <p>© 2017 - Site built by Heather Mathies | View the code on GitHub <a href="https://github.com/hmathies/Train-Schedule" target="_blank"><img src="assets/images/GitHub_Icon.png" height="20" width="20" alt="GitHub"></a></p>
-      </div>
-    </div>
-
-    <!-- closing div for container -->
   </div>
 
+  <!-- Current Train Schedule -->
+  <div class="container table-responsive" id="trainSchedule">
+    <div class="row">
+      <div class="panel panel-default col-sm-12">
+        <div class="panel-heading">
+          <h3 class="panel-title" id="current">Current Train Schedule</h3>
+        </div>
+        <div class="">
+          <table class="table train-list table-striped">
 
+            <thead class="table-header">
+              <tr>
+                <th scope="col">Train Name</th>
+                <th scope="col">Destination</th>
+                <th scope="col">Frequency</th>
+                <th scope="col">Next Arrival</th>
+                <th scope="col">Minutes Away</th>
+              </tr>
+            </thead>
+            <!-- train data from firebase is loaded into the tbody -->
+            <tbody></tbody>
+
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Add Train -->
+  <div class="container mt-2" id='addTrain'>
+    <div class="row">
+      <div class="panel panel-default  col-sm-12">
+        <div class="panel-heading">
+          <h3 class="panel-title" id="add">Add a Train</h3>
+        </div>
+        <div class="panel-body">
+          <form class="addTrainForm form-group">
+            <div class="form-group">
+              <label for="train-name">Train Name</label>
+              <input class="form-control" id="train-name" type="text" placeholder="Midnight Express" required>
+            </div>
+            <div class="form-group">
+              <label for="destination">Destination</label>
+              <input class="form-control" id="destination" type="text" placeholder="London" required>
+            </div>
+            <div class="form-group">
+              <label for="first-time">First Train Time (military)</label>
+              <input class="form-control" id="first-time" placeholder="00:00" required>
+            </div>
+            <div class="form-group">
+              <label for="frequency">Frequency(min)</label>
+              <input class="form-control" id="frequency" type="number" placeholder="30" required>
+            </div>
+            <button class="btn btn-block background-switch" id="submit-train" type="submit">Add</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!--   footer   -->
+  <div class="row footer">
+    <div class="col-lg-12">
+      <p>© 2017 - Site built by Heather Mathies | View the code on GitHub <a href="https://github.com/hmathies/Train-Schedule" target="_blank"><img src="assets/images/GitHub_Icon.png" height="20" width="20" alt="GitHub"></a></p>
+    </div>
+  </div>
+
+  <!-- closing div for container -->
+
+
+  <!-- Link to jQuery CDN -->
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
 
   <!-- Link to momentjs CDN -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.19.1/moment.min.js"></script>
   <!-- Firebase Link -->
   <script src="https://www.gstatic.com/firebasejs/4.6.2/firebase.js"></script>
-  <!-- Link to jQuery CDN -->
-  <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+
 
   <script src="assets/js/app.js"></script>
 </body>
