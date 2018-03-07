@@ -25,20 +25,18 @@
 
   <!-- Header  -->
   <div class="jumbotron">
-    <div class="container">
-      <h1 id="title"><strong>Train Scheduler</strong></h1>
-    </div>
+    <div class="display-2 mb-4" id="title">Train Scheduler</div>
   </div>
 
   <!-- Current Train Schedule -->
-  <div class="container table-responsive" id="trainSchedule">
+  <div class="container " id="trainSchedule">
     <div class="row">
       <div class="panel panel-default col-sm-12">
         <div class="panel-heading">
           <h3 class="panel-title" id="current">Current Train Schedule</h3>
         </div>
-        <div class="">
-          <table class="table train-list table-striped">
+        <div class="table-responsive">
+          <table class="table train-list table-striped text-dark ">
 
             <thead class="table-header">
               <tr>
@@ -50,7 +48,7 @@
               </tr>
             </thead>
             <!-- train data from firebase is loaded into the tbody -->
-            <tbody></tbody>
+            <tbody scope="row"></tbody>
 
           </table>
         </div>

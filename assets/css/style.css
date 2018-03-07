@@ -3,12 +3,12 @@
 #title {
   color: teal;
   font-family: 'Quattrocento Sans', sans-serif;
-  font-size: 50px;
   font-weight: 900;
-  top: 0;
   text-align: center;
 
 }
+
+
 
 
 
@@ -26,12 +26,7 @@
   text-align: center;
 
 }
-/* .container {
-  background-image: url('../images/trainWallpaper.jpg');
-  opacity: 0.8;
-  width: 100%;
-  clear: both;
-} */
+
 
 body {
   background-image: url('../images/trainWallpaper.jpg');
@@ -61,14 +56,11 @@ body {
 
 }
 
-/* .train-list {
-  width: 820px;
-  text-align: left;
-} */
-
-.train-key {
+.train-list {
   text-align: left;
 }
+
+
 
 
 
